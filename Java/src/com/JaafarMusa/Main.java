@@ -1,6 +1,7 @@
 package com.JaafarMusa;
 
 
+import com.JaafarMusa.DSYT.DoublyLinkedList;
 import com.JaafarMusa.DSYT.DynamicArray1;
 
 public class Main {
@@ -12,7 +13,9 @@ public class Main {
         arr.add(2);
         arr.add(2);
         arr.add(2);
-        System.out.println(arr.removeAt(1));
-        System.out.println(arr.size());
+//        System.out.println(arr.removeAt(1));
+        System.out.println(arr.toString());
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+
     }
 }

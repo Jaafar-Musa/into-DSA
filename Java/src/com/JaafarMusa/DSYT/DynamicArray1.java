@@ -1,7 +1,5 @@
 package com.JaafarMusa.DSYT;
 
-
-import java.util.Arrays;
 import java.util.Iterator;
 
 @SuppressWarnings("unchecked")
@@ -92,8 +90,9 @@ public class DynamicArray1 <T> implements Iterable <T> {
     }
 
     //iterator is fast but not as fast as iterative
+    //concurrent modification error not implemented
     @Override public Iterator<T> iterator() {
-        return new Iterator<T>() {
+        return new Iterator<>() {
             int index = 0;
             @Override
             public boolean hasNext() {
@@ -110,7 +109,11 @@ public class DynamicArray1 <T> implements Iterable <T> {
     @Override
     public String toString() {
         if(len == 0) return "[]";
-        return "";
+        StringBuilder sb = new StringBuilder(len).append("[");
+        for(int i = 0 ; i < len - 1; i++){
+            sb.append(arr[i] + ", ");
+        }
+        return sb.append(arr[len-1] + "]").toString();
 //        else {
 //            StringBuilder sb = new StringBuilder();
 ////            return "DynamicArray1{" +
